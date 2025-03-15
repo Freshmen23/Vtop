@@ -1,19 +1,13 @@
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/VITLogoEmblem.png";
-import UserImg from "../private/my_passport_size_photo.jpg"
 
 function Hostel_page() {
     const location = useLocation();
     const navigate = useNavigate();
-    const selectedOption = location.state?.option || "No option selected";
+    const formData = location.state || {};
 
-    useEffect(() => {
-        if (!location.state) {
-            navigate("/"); // Redirect if no state is found
-        }
-    }, [location, navigate]);
-
+    console.log(formData.Block);
     return (
         <div className="flex flex-col h-screen bg-gray-100">
             {/* Header */}
@@ -30,9 +24,18 @@ function Hostel_page() {
                     </div>
                 </div>
                 <div className="flex items-center">
-                    <img className="h-[40px] rounded-[50%]" src={UserImg} alt="UserImg" />
+                    {/* <img className="h-[40px] rounded-[50%]" src={UserImg} alt="UserImg" /> */}
+                    {/* {formData.image && (
+                        <div>
+                            <img src={formData.image} alt="user img" className="h-[40px] rounded-[50%]" />
+                        </div>
+                    )} */}
+                    <div>
+                        <img src={formData.image} alt="user img" className="h-[40px] rounded-[50%]" />
+                    </div>
+
                     <button className="px-2 py-1 rounded flex items-center">
-                        22BAI10038 (STUDENT)
+                        {formData.regNo} (STUDENT)
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -105,19 +108,19 @@ function Hostel_page() {
                         <div className="flex-1">
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Application Number</div>
-                                <div className="bg-[#f2dede] w-2/3 p-3 ">2022070754</div>
+                                <div className="bg-[#f2dede] w-2/3 p-3 ">2022070751</div>
                             </div>
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Register Number</div>
-                                <div className=" bg-[#f2dede] w-2/3 p-3 ">22BAI10038</div>
+                                <div className=" bg-[#f2dede] w-2/3 p-3 ">{formData.regNo}</div>
                             </div>
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Block Name</div>
-                                <div className="bg-[#f2dede] w-2/3 p-3">{selectedOption}</div>
+                                <div className="bg-[#f2dede] w-2/3 p-3">{formData.Block}</div>
                             </div>
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Room No.</div>
-                                <div className="bg-[#f2dede] w-2/3 p-3 ">205</div>
+                                <div className="bg-[#f2dede] w-2/3 p-3 ">{formData.roomNo}</div>
                             </div>
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Bed Type</div>
@@ -130,7 +133,18 @@ function Hostel_page() {
                         </div>
                         <div className="p-2 bg-[#f2dede] flex items-start justify-center">
                             <div className="p-[7px] rounded-[4px]  bg-gray-300 border-gray-400 flex items-center justify-center overflow-hidden">
-                                <img className="h-[130px] w-[120px] rounded-[14px]  border-2 border-[#3c8dbc]" src={UserImg} alt="UserImg" />
+                                {/* <img className="h-[130px] w-[120px] rounded-[14px]  border-2 border-[#3c8dbc]" src={UserImg} alt="UserImg" /> */}
+
+                                {/* {formData.image && (
+                                    <div>
+                                        <img src={formData.image} alt="user img" className="h-[130px] w-[120px] rounded-[14px]  border-2 border-[#3c8dbc]" />
+                                    </div>
+                                )} */}
+
+                                <div>
+                                    <img src={formData.image} alt="user img" className="h-[130px] w-[120px] rounded-[14px]  border-2 border-[#3c8dbc]" />
+                                </div>
+
                             </div>
                         </div>
                     </div>
