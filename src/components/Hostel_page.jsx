@@ -108,7 +108,7 @@ function Hostel_page() {
                         <div className="flex-1">
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Application Number</div>
-                                <div className="bg-[#f2dede] w-2/3 p-3 ">2022070751</div>
+                                <div className="bg-[#f2dede] w-2/3 p-3 ">2022060859</div>
                             </div>
                             <div className="flex border-b border-gray-300">
                                 <div className="bg-[#d4d3d3] w-1/3 p-3 font-semibold">Register Number</div>
